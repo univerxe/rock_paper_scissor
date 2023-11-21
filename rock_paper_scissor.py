@@ -18,10 +18,10 @@ while True:
     game_bg_img = cv2.imread("images/game_bg_img.png")
     success, cam_img = cam.read()
     scaled_cam_img = cv2.resize(cam_img, (0, 0), None, 0.875, 0.875) # height scaled
-    scaled_cam_img = scaled_cam_img[:, 80:480]                        # width scaled
+    scaled_cam_img = scaled_cam_img[:, 80:480]                       # width scaled
     
     # find hand landmarks
-    hand_landmarks, cam_img = detector.findHands(scaled_cam_img)
+    hand_landmarks, cam_img = detector.findHands(scaled_cam_img, draw=False)
     
     if start_game: # if start game is true (game has started) when pressed 's' key  
         if result_user == False: 
